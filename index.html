@@ -78,15 +78,35 @@
           </div>
         </form>
 
-        <div class="border m-5">
-          <table class="table">
+        <div class="border m-5 p-2">
+          <table class="table table-striped">
+            <h2 class="text-center fs-4">TODOs</h2>
             <thead>
-              <tr>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Priority</th>
+              <tr class="d-flex">
+                <th class="col">Description</th>
+                <th class="col-1">Category</th>
+                <th class="col-1">Priority</th>
+                <th class="col-1"></th>
               </tr>
             </thead>
+            <tbody>
+              <tr class="d-flex">
+                <td class="col border">Go to the mall</td>
+                <td class="col-1 border">Personal</td>
+                <td class="col-1 border">Low</td>
+                <td class="col-1 border">
+                  <button class="btn btn-sm btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr class="d-flex">
+                <td class="col border">Go to the mall</td>
+                <td class="col-1 border">Personal</td>
+                <td class="col-1 border">Low</td>
+                <td class="col-1 border">
+                  <button class="btn btn-sm btn-danger">Delete</button>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </main>
