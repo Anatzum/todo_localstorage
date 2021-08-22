@@ -71,7 +71,9 @@ class Store {
   }
 
   static deleteTodo(description) {
-    console.log(description);
+    let todos = Store.getTodos();
+    todos = todos.filter(todo => todo.description !== description);
+    localStorage.setItem('todos', JSON.stringify(todos));
   }
 }
 
@@ -105,5 +107,7 @@ document.querySelector("#todo-form").addEventListener('submit', (e) => {
 document.querySelector('#todo-tbody').addEventListener('click', (e) => {
   if (e.target.classList.contains('delete-todo')) {
     UI.removeTodoRow(e.target.parentElement.parentElement);
+    Store.deleteTodo(e.target.parentElement.parentElement.children[0].textContent);
+    UI.showAlert('Removed Todo', 'success');
   }
 });
