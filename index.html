@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <script
+      src="https://kit.fontawesome.com/724ebb1107.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/5/flatly/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="mt-4 border-bottom border-2">
+        <h1 class="display-4 text-center text-primary">
+          <i class="fas fa-list-alt"></i>
+          TODO
+        </h1>
+      </header>
+
+      <main>
+        <form id="todo-form" class="p-4 border mt-4 m-5">
+          <h2 class="text-center fs-3">New Item</h2>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" id="description" class="form-control" />
+          </div>
+
+          <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select id="category" class="form-select">
+              <option value="none" selected disabled></option>
+              <option value="personal">Personal</option>
+              <option value="work">Work</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="priority" class="form-label">Priority</label>
+            <select id="priority" class="form-select">
+              <option value="none" selected disabled></option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+
+          <div class="d-grid">
+            <button class="btn btn-primary">Create</button>
+          </div>
+        </form>
+
+        <div class="border m-5 p-2">
+          <table class="table table-striped">
+            <h2 class="text-center fs-4">TODOs</h2>
+            <thead>
+              <tr class="d-flex">
+                <th class="col">Description</th>
+                <th class="col-1">Category</th>
+                <th class="col-1">Priority</th>
+                <th class="col-1"></th>
+              </tr>
+            </thead>
+            <tbody id="todo-tbody"></tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <script src="app.js" async></script>
+  </body>
+</html>
