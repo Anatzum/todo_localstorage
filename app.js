@@ -24,7 +24,7 @@ class UI {
       <td class="col-1 border">${todo.category}</td>
       <td class="col-1 border">${todo.priority}</td>
       <td class="col-1 border">
-        <button class="btn btn-sm btn-danger">Delete</button>
+        <button class="btn btn-sm btn-danger delete-todo">Delete</button>
       </td>
     `;
 
@@ -32,7 +32,7 @@ class UI {
   }
 
   static removeTodoRow(el) {
-    console.log(el);
+    el.remove();
   }
 
   static showAlert(message, type) {
@@ -102,3 +102,8 @@ document.querySelector("#todo-form").addEventListener('submit', (e) => {
 });
 
 // Event : Remove a Todo
+document.querySelector('#todo-tbody').addEventListener('click', (e) => {
+  if (e.target.classList.contains('delete-todo')) {
+    UI.removeTodoRow(e.target.parentElement.parentElement);
+  }
+});
